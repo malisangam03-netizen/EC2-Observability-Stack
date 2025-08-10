@@ -1,0 +1,20 @@
+route:
+  receiver: default
+  group_by: ['alertname', 'cluster', 'service']
+  group_wait: 30s
+  group_interval: 5m
+  repeat_interval: 3h
+
+receivers:
+  - name: default
+    email_configs:
+      - to: "ops@example.com"          # CHANGE ME
+        from: "alertmanager@example.com" # CHANGE ME
+        smarthost: "smtp.example.com:587" # CHANGE ME
+        auth_username: "smtp_user"       # CHANGE ME
+        auth_identity: "smtp_user"       # CHANGE ME
+        auth_password: "CHANGE_ME"       # CHANGE ME
+        require_tls: true
+
+templates:
+  - '/etc/alertmanager/templates/*.tmpl'

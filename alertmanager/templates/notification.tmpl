@@ -1,0 +1,7 @@
+{{ define "slack.title" }}[{{ .Status | toUpper }}] {{ .CommonLabels.alertname }}{{ end }}
+{{ define "slack.text" }}
+*Summary*: {{ .CommonAnnotations.summary }}
+*Description*: {{ .CommonAnnotations.description }}
+*StartsAt*: {{ .Alerts.Firing | first | .StartsAt }}
+*Labels*: {{ range $k, $v := .CommonLabels }}`{{$k}}={{$v}}` {{ end }}
+{{ end }}
