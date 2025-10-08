@@ -1,4 +1,4 @@
-### sangam Production-ready monitoring, logging, and alerting for a single EC2
+### Production-ready monitoring, logging, and alerting for a single EC2
 
 This stack deploys industry-standard tooling on one EC2 host using Docker:
 - Prometheus: metrics collection and alerting rules (30d / 20GB retention by default)
